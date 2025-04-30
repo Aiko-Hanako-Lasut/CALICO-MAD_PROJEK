@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -116,3 +117,11 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+=======
+import React from 'react';
+import EnterQuiz from './EnterQuiz'; // Pastikan path dan huruf besar kecil pas
+
+export default function App() {
+  return <EnterQuiz />;
+}
+>>>>>>> 05494fd (EnterQuiz)

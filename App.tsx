@@ -1,14 +1,14 @@
-import React from 'react';
-import EnterQuiz from './screens/EnterQuiz';
-import Report from './screens/Report';
-import ViewReport from './screens/ViewReport';
-import Home from './screens/Home';
-import ABOUTUS from './screens/ABOUTUS';
-import EDITPASS from './screens/editpass';
-import MyProfile from './screens/MyProfile';
-import QuestionReport from './screens/QuestionReport';
-import CreateQuiz from './screens/createQuiz';
+import { NavigationContainer } from '@react-navigation/native'
+import React from 'react'
 
-export default function App() {
-  return <CreateQuiz />;
+import AppNavigator from './src/navigation/appNavigator'
+
+const App = () => {
+  return(
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
+  )
 }
+
+export default App

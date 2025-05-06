@@ -25,7 +25,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'Calicoauli' do
+target 'Calico3' do
   config = use_native_modules!
 
   use_react_native!(
@@ -39,7 +39,7 @@ target 'Calicoauli' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'CalicoauliTests' do
+  target 'Calico3Tests' do
     inherit! :complete
     # Pods for testing
   end

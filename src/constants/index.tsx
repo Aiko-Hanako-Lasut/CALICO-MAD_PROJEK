@@ -4,8 +4,8 @@
 // fungsi: tetapkan warna bg (krn sama semua)
 
 const COLORS = {
-    primary: '#F2A602',
-    border: '#F2A602',
-  };
+  primary: '#F2A602',
+  border: '#F2A602',
+};
 
-  export default COLORS;
+export default COLORS;

@@ -3,7 +3,7 @@ import {ImageBackground, StyleSheet} from 'react-native';
 
 const Body: React.FC<{children: React.ReactNode}> = ({children}) => (
   <ImageBackground
-    source={require('../../../src/assets/background.png')}
+    source={require('../../../assets/background.png')}
     style={styles.background}
     resizeMode="cover">
     {children}

@@ -1,44 +1,50 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, TouchableOpacity, Text, Image} from 'react-native';
 
-interface FooterItem {
-  label: string;
-  iconSource: any; // Bisa berupa number (untuk require()) atau URI
-  onPress: () => void;
-  accessibilityLabel: string;
-}
-
-interface FooterProps {
-  items: FooterItem[];
-}
-
-const Footer: React.FC<FooterProps> = ({items}) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+const Footer = ({onViewProfile, onChangePassword}) => {
+  const [isProfilePressed, setIsProfilePressed] = useState(false);
+  const [isPasswordPressed, setIsPasswordPressed] = useState(false);
 
   return (
     <View style={styles.container}>
-      {items.map((item, index) => (
-        <TouchableOpacity
-          key={index}
-          style={[styles.item, activeIndex === index && styles.pressedItem]}
-          onPress={() => {
-            setActiveIndex(index);
-            item.onPress();
-          }}
-          onBlur={() => setActiveIndex(null)}
-          activeOpacity={1}
-          accessibilityLabel={item.accessibilityLabel}>
-          <Image
-            source={item.iconSource}
-            style={styles.icon}
-            accessibilityLabel={`${item.label} Icon`}
-          />
-          <Text
-            style={[styles.text, activeIndex === index && styles.pressedText]}>
-            {item.label}
-          </Text>
-        </TouchableOpacity>
-      ))}
+      <TouchableOpacity
+        style={[styles.item, isProfilePressed && styles.pressedItem]}
+        onPress={() => {
+          setIsProfilePressed(true);
+          setIsPasswordPressed(false); // Ensure the other button's state is reset
+          onViewProfile();
+        }}
+        onBlur={() => setIsProfilePressed(false)}
+        activeOpacity={1} // Mencegah opacity berubah saat ditekan
+        accessibilityLabel="View Profile Button">
+        <Image
+          source={require('../../../assets/viewprofile.png')}
+          style={styles.icon}
+          accessibilityLabel="Profile Icon"
+        />
+        <Text style={[styles.text, isProfilePressed && styles.pressedText]}>
+          View Profile
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[styles.item, isPasswordPressed && styles.pressedItem]}
+        onPress={() => {
+          setIsPasswordPressed(true);
+          setIsProfilePressed(false); // Ensure the other button's state is reset
+          onChangePassword();
+        }}
+        onBlur={() => setIsPasswordPressed(false)}
+        activeOpacity={1} // Mencegah opacity berubah saat ditekan
+        accessibilityLabel="Change Password Button">
+        <Image
+          source={require('../../../assets/editicon.png')}
+          style={styles.icon}
+          accessibilityLabel="Edit Icon"
+        />
+        <Text style={[styles.text, isPasswordPressed && styles.pressedText]}>
+          Change Password
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -52,19 +58,19 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: '#eee',
     height: 100,
-    width: '100%', // Lebar footer menyesuaikan layar
+    width: 402,
   },
   item: {
-    flexDirection: 'row',
+    flexDirection: 'row', // Mengatur ikon dan teks menjadi satu baris
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 10,
+    justifyContent: 'center', // Agar ikon dan teks berada di tengah
+    paddingHorizontal: 10, // Menambahkan padding horizontal
   },
   icon: {
     width: 24,
     height: 24,
-    marginRight: 8,
+    marginRight: 8, // Memberikan jarak antara ikon dan teks
   },
   text: {
     fontSize: 16,
@@ -75,7 +81,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   pressedText: {
-    color: '#F2A602',
+    color: '#F2A602', // Mengubah warna teks saat ditekan (opsional)
   },
 });
 

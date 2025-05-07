@@ -12,11 +12,13 @@ import {
   TextStyle,
 } from 'react-native';
 
-export interface TextInputProps extends RNTextInputProps { // props (parameter) untuk komponen
+export interface TextInputProps extends RNTextInputProps {
+  // props (parameter) untuk komponen
   hasBorder?: boolean;
 }
 
-const TextInput: React.FC<TextInputProps> = ({ // komponen utama dengan props
+const TextInput: React.FC<TextInputProps> = ({
+  // komponen utama dengan props
   hasBorder = false,
   style,
   ...rest
@@ -26,10 +28,7 @@ const TextInput: React.FC<TextInputProps> = ({ // komponen utama dengan props
   };
 
   return (
-    <BaseTextInput
-      {...rest}
-      style={[styles.input, dynamicStyle, style]}
-    />
+    <BaseTextInput {...rest} style={[styles.input, dynamicStyle, style]} />
   );
 };
 

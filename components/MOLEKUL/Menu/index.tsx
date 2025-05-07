@@ -1,133 +1,129 @@
-/* eslint-disable prettier/prettier */
-
-// components/MOLEKUL/Menu.tsx
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-  Image,
-} from 'react-native';
-import {NavigationProp} from '@react-navigation/native';
-
-interface MenuItem {
-  iconSource: any; // you can tighten this if you import PNG types
-  label: string;
-  onPress: () => void;
-}
+import {View, Text, Pressable, Modal, StyleSheet, Image} from 'react-native';
+import {CreateQuiz, Report, About} from '../../../constants';
 
 interface MenuDrawerProps {
-  // props (parameter) untuk komponen
-  navigation: NavigationProp<any>;
+  isOpen: boolean;
+  onClose: () => void;
+  navigation: any;
 }
 
-const MenuDrawer: React.FC<MenuDrawerProps> = ({navigation}) => {
-  const menuItems: MenuItem[] = [
-    {
-      iconSource: require('../../../assets/Home.png'),
-      label: 'Home',
-      onPress: () => {
-        navigation.navigate('Home');
-      },
-    },
-    {
-      iconSource: require('../../../assets/Home.png'),
-      label: 'Create Quiz',
-      onPress: () => {
-        navigation.navigate('CreateQuiz');
-      },
-    },
-    {
-      iconSource: require('../../../assets/reportnote.png'),
-      label: 'Report',
-      onPress: () => {
-        navigation.navigate('ReportScreen');
-      },
-    },
-    {
-      iconSource: require('../../../assets/Home.png'),
-      label: 'About Us',
-      onPress: () => {
-        navigation.navigate('About');
-      },
-    },
-    // …any other items
-  ];
-
+const MenuDrawer: React.FC<MenuDrawerProps> = ({
+  isOpen,
+  onClose,
+  navigation,
+}) => {
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        {/* Header */}
-        <View style={styles.header}>
-          <Image
-            source={require('../../../assets/LogoCalico.png')}
-            style={styles.logo}
-            resizeMode="contain"
-          />
-          <Text style={styles.subtitle}>MAKE YOUR STUDY FUN</Text>
-        </View>
+    <Modal
+      visible={isOpen}
+      animationType="fade"
+      transparent
+      onRequestClose={onClose}>
+      <Pressable style={styles.overlay} onPress={onClose}>
+        <View style={styles.menuContainer}>
+          <Text style={styles.menuHeader}>MENU</Text>
 
-        {/* Menu Items */}
-        <View style={styles.menuItemsContainer}>
-          {menuItems.map((item, idx) => (
-            <TouchableOpacity
-              key={idx}
-              style={styles.item}
-              onPress={item.onPress}>
-              <View style={styles.itemIndicator} />
-              <Image
-                source={item.iconSource}
-                style={styles.icon}
-                resizeMode="contain"
-              />
-              <Text style={styles.label}>{item.label}</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
+          {/* Create Quiz */}
+          <Pressable
+            style={({pressed}) => [
+              styles.menuItem,
+              pressed && styles.menuItemPressed,
+            ]}
+            onPress={() => {
+              onClose();
+              navigation.navigate(CreateQuiz);
+            }}>
+            <Image
+              source={require('../../../assets/add.jpg')}
+              style={styles.icon}
+            />
+            <Text style={styles.menuText}>Create Quiz</Text>
+          </Pressable>
 
-        {/* Bottom Ornament */}
-        <View style={styles.bottomOrnament} />
-      </View>
-    </SafeAreaView>
+          {/* Report */}
+          <Pressable
+            style={({pressed}) => [
+              styles.menuItem,
+              pressed && styles.menuItemPressed,
+            ]}
+            onPress={() => {
+              onClose();
+              navigation.navigate(Report);
+            }}>
+            <Image
+              source={require('../../../assets/reportnote.png')}
+              style={styles.icon}
+            />
+            <Text style={styles.menuText}>Report</Text>
+          </Pressable>
+
+          {/* About Us */}
+          <Pressable
+            style={({pressed}) => [
+              styles.menuItem,
+              pressed && styles.menuItemPressed,
+            ]}
+            onPress={() => {
+              onClose();
+              navigation.navigate(About);
+              // Navigate to AboutUS
+            }}>
+            <Image
+              source={require('../../../assets/informasi.png')}
+              style={styles.icon}
+            />
+            <Text style={styles.menuText}>About Us</Text>
+          </Pressable>
+        </View>
+      </Pressable>
+    </Modal>
   );
 };
 
-export default MenuDrawer;
-
 const styles = StyleSheet.create({
-  safeArea: {flex: 1},
-  container: {
+  overlay: {
     flex: 1,
-    backgroundColor: '#FFDA63',
-    paddingTop: 20,
-    paddingHorizontal: 15,
-  },
-  header: {
-    paddingVertical: 20,
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    marginBottom: 20,
   },
-  logo: {width: 120, height: 40},
-  subtitle: {fontSize: 12, color: '#000', marginTop: 2},
-  menuItemsContainer: {flex: 1},
-  item: {
+  menuContainer: {
+    backgroundColor: '#FFCC66',
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    width: 250,
+    height: '100%',
+    elevation: 5,
+  },
+  menuHeader: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    marginLeft: 10,
+    color: '#000',
+  },
+  menuItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 12,
-    marginBottom: 5,
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#ddd',
+    borderRadius: 8,
   },
-  itemIndicator: {
-    width: 5,
-    height: '100%',
-    backgroundColor: '#008080',
-    marginRight: 15,
+  menuItemPressed: {
+    backgroundColor: '#ffe299',
   },
-  icon: {width: 24, height: 24, marginRight: 15},
-  label: {fontSize: 16, color: '#000'},
-  bottomOrnament: {
-    height: 60,
-    backgroundColor: 'rgba(255, 218, 99, 0.5)',
+  icon: {
+    width: 22,
+    height: 22,
+    marginRight: 12,
+    resizeMode: 'contain',
+  },
+  menuText: {
+    fontSize: 16,
+    color: '#333',
   },
 });
+
+export default MenuDrawer;

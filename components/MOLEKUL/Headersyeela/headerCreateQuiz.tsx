@@ -5,8 +5,8 @@
 
 import React from 'react';
 import {StyleSheet, View, ImageBackground} from 'react-native';
-import {calicoHeader} from '../../../src/assets';
-import Button from '../../ATOM/buttonsyeela';
+import {calicoHeader} from '../../../assets';
+import Button from '../../ATOM/Button';
 
 interface HeaderProps {
   // props (parameter) untuk komponen

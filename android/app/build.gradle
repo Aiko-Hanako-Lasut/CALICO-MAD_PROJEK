@@ -74,9 +74,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.calicofixxx"
+    namespace "com.pastibisa"
     defaultConfig {
-        applicationId "com.calicofixxx"
+        applicationId "com.pastibisa"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

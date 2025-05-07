@@ -36,15 +36,27 @@ const LogIn: React.FC<LogInProps> = ({ navigation }) => { // komponen utama deng
 
   const onUsernameOrEmailChange = (text: string) => {
     setUsernameOrEmail(text);
-    setUsernameOrEmailErrMsg('');
+    setUsernameOrEmailErrMsg('Incorrect username or email');
   };
 
   const onPasswordChange = (text: string) => {
     setPassword(text);
-    setPasswordErrMsg('');
+    setPasswordErrMsg('Incorrect password');
   };
 
   const onLoginPress = () => {
+    const auth = getAuth();
+      signInWithEmailAndPassword(auth, usernameOrEmail, password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          navigation.navigate('createQuiz', {uid: user.uid});
+        })
+        .catch((error) => {
+          setUsernameOrEmailErrMsg;
+          setPasswordErrMsg;
+        });
+
     let valid = true;
     if (!usernameOrEmail) {
       setUsernameOrEmailErrMsg('Please enter your username or email');

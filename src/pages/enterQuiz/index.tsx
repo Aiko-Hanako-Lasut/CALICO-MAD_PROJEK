@@ -13,30 +13,32 @@ import {
   Modal,
 } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
+import { calicoBg, logo } from '../../assets';
 
 interface handleStartQuizProps {
   navigation: NavigationProp<any>;
 }
 
-export default function EnterQuiz() {
+export default function EnterQuiz({ navigation }: handleStartQuizProps) {
   const [name, setName] = useState('');
   const [nim, setNim] = useState('');
   const [quizCode, setQuizCode] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
 
-  const handleStartQuiz: React.FC<handleStartQuizProps> = ({ navigation }) => {
+  const handleStartQuiz = (navigation: NavigationProp<any>) => {
     if (quizCode !== '12345') {
-      // Contoh validasi kode
       setModalVisible(true);
     } else {
-      // lanjut ke quiz page kalau code benar
-      console.log('Code valid, mulai quiz!');
+      navigation.navigate('quizQuestionScreen2', {
+        name,
+        nim,
+      });
     }
   };
 
   return (
     <ImageBackground
-      source={require('../../assets/calico_bg.png')}
+      source={calicoBg}
       style={styles.background}
       resizeMode="cover">
       <StatusBar
@@ -49,11 +51,13 @@ export default function EnterQuiz() {
       <View style={styles.header}>
         <View style={styles.logoContainer}>
           <Image
-            source={require('../../assets/logo.png')}
+            source={logo}
             style={styles.logoImage}
           />
         </View>
-        <TouchableOpacity style={styles.loginLecturerButton}>
+        <TouchableOpacity
+          style={styles.loginLecturerButton}
+          onPress={() => navigation.navigate('logIn')}>
           <Text style={styles.loginLecturerText}>Login as a lecturer</Text>
         </TouchableOpacity>
       </View>
@@ -81,7 +85,9 @@ export default function EnterQuiz() {
           value={quizCode}
           onChangeText={setQuizCode}
         />
-        <TouchableOpacity style={styles.startButton} onPress={handleStartQuiz}>
+        <TouchableOpacity
+          style={styles.startButton}
+          onPress={() => handleStartQuiz(navigation)}>
           <Text style={styles.startButtonText}>Start</Text>
         </TouchableOpacity>
       </View>

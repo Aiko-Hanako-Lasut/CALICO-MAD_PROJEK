@@ -55,7 +55,7 @@ const CreateQuiz: React.FC<CreateQuizProps> = ({ navigation }) => {
   const [answerIndex, setAnswerIndex] = useState<number | null>(null);
 
   const onSave = () => navigation.navigate('logIn');
-  const onExit = () => navigation.navigate('logIn');
+  const onExit = () => navigation.navigate('home');
 
   const updateQuestion = (updates: Partial<Question>) => {
     setQuestions(prev =>

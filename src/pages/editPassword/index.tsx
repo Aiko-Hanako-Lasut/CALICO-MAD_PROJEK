@@ -6,6 +6,7 @@ import Footer from '../../components/molecules/footer/footer2';
 import Header from '../../components/molecules/header/header2';
 import Body from '../../components/molecules/body/body2';
 import {NavigationProp} from '@react-navigation/native';
+import { editIcon, eyeClose, eyeOpen, profileIcon } from '../../assets';
 
 interface ChangePasswordScreenProps {
   navigation: NavigationProp<any>;
@@ -30,16 +31,16 @@ const ChangePasswordScreen: React.FC<ChangePasswordScreenProps> = ({
   };
 
   const handleViewProfilePress = () => {
-    console.log('View Profile pressed (from footer)');
+    navigation.navigate('myProfile');
   };
 
   const handleChangePasswordPress = () => {
-    console.log('Change Password pressed (from footer)');
+    navigation.navigate('changePassword');
   };
 
   return (
     <Body>
-      <Header navigation={undefined} />
+      <Header/>
       <View style={styles.container}>
         <Text style={styles.title}>CHANGE MY PASSWORD</Text>
 
@@ -54,8 +55,8 @@ const ChangePasswordScreen: React.FC<ChangePasswordScreenProps> = ({
             <Image
               source={
                 showOldPassword
-                  ? require('../../assets/eyeOpen.png')
-                  : require('../../assets/eyeClose.png')
+                  ? eyeOpen
+                  : eyeClose
               }
               style={styles.eyeIcon}
             />
@@ -73,8 +74,8 @@ const ChangePasswordScreen: React.FC<ChangePasswordScreenProps> = ({
             <Image
               source={
                 showNewPassword
-                ? require('../../assets/eyeOpen.png')
-                : require('../../assets/eyeClose.png')
+                ? eyeOpen
+                : eyeClose
             }
               style={styles.eyeIcon}
             />
@@ -94,26 +95,43 @@ const ChangePasswordScreen: React.FC<ChangePasswordScreenProps> = ({
             <Image
               source={
                 showNewPasswordConfirmation
-                ? require('../../assets/eyeOpen.png')
-                : require('../../assets/eyeClose.png')
+                ? eyeOpen
+                : eyeClose
             }
               style={styles.eyeIcon}
             />
           </TouchableOpacity>
         </InputText>
 
-        <Button
-          title="SAVE"
-          onPress={handleSavePassword}
-          backgroundColor="#26A69A"
-          textColor="white"
-          style={styles.saveButton}
-        />
+        <View style={styles.saveButton}>
+          <Button
+            title="SAVE"
+            onPress={handleSavePassword}
+            backgroundColor="#26A69A"
+            textColor="white"
+          />
+        </View>
       </View>
 
       <Footer
-        onViewProfile={handleViewProfilePress}
-        onChangePassword={handleChangePasswordPress}
+        items={[
+          { 
+            label: 'Profile', 
+            onPress: handleViewProfilePress, 
+            iconSource: profileIcon, 
+            accessibilityLabel: 'View Profile', 
+            onChangePassword: handleChangePasswordPress, 
+            onViewProfile: handleViewProfilePress 
+          },
+          { 
+            label: 'Change Password', 
+            onPress: handleChangePasswordPress, 
+            iconSource: editIcon, // tes
+            accessibilityLabel: 'Change Password', 
+            onChangePassword: handleChangePasswordPress, 
+            onViewProfile: handleViewProfilePress 
+          },
+        ]}
       />
     </Body>
   );

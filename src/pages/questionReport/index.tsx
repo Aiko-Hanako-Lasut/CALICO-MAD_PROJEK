@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import Header from '../../components/molecules/header/header2';
 import Body from '../../components/molecules/body/body2';
-import Footer from '../../components/molecules/footer/footer2';
 import { NavigationProp } from '@react-navigation/native';
+import { back, checklist, editIcon, profileIcon, questionMark, reportNotes, statistics } from '../../assets';
 
 interface QuestionStatisticsScreenProps {
   navigation: NavigationProp<any>;
@@ -33,6 +33,8 @@ interface ImprovementArea {
 const QuestionStatisticsScreen: React.FC<QuestionStatisticsScreenProps> = ({navigation}) => {
   const improvementAreas: ImprovementArea[] = [
     {
+      title: 'Area 1',
+      description: 'Focus on improving these questions.',
       stats: [
         {question: 'Question F', correctAnswer: '5/15', successRate: '10 %'},
         {question: 'Question B', correctAnswer: '10/15', successRate: '65 %'},
@@ -40,6 +42,8 @@ const QuestionStatisticsScreen: React.FC<QuestionStatisticsScreenProps> = ({navi
       ],
     },
     {
+      title: 'Area 2',
+      description: 'These questions performed well.',
       stats: [
         {question: 'Question A', correctAnswer: '15/15', successRate: '100 %'},
         {question: 'Question B', correctAnswer: '10/15', successRate: '65 %'},
@@ -56,16 +60,33 @@ const QuestionStatisticsScreen: React.FC<QuestionStatisticsScreenProps> = ({navi
     console.log('Question Statistics Pressed');
   };
 
-  const footerItems: FooterItem[] = [
-    {
+  const handleViewProfilePress = () => {
+    console.log('View Profile Pressed');
+  };
+
+  const handleChangePasswordPress = () => {
+    console.log('Change Password Pressed');
+  };
+
+  interface FooterItem {
+    label: string;
+    iconSource: any;
+    onPress: () => void;
+    accessibilityLabel: string;
+    onChangePassword?: () => void;
+    onViewProfile?: () => void;
+  }
+  
+    const footerItems: FooterItem[] = [
+      {
       label: 'Report Summary',
-      iconSource: require('../../assets/reportnote.png'), // Pastikan path ikon ini benar
+      iconSource: reportNotes,
       onPress: handleReportSummaryPress,
       accessibilityLabel: 'Report Summary Button',
     },
     {
       label: 'Question Statistics',
-      iconSource: require('../../assets/statistics.png'), // Pastikan path ikon ini benar
+      iconSource: statistics,
       onPress: handleQuestionStatisticsPress,
       accessibilityLabel: 'Question Statistics Button',
     },
@@ -73,14 +94,14 @@ const QuestionStatisticsScreen: React.FC<QuestionStatisticsScreenProps> = ({navi
 
   return (
     <View style={styles.container}>
-      <Header navigation={navigation} />
+      <Header/>
       <Body>
         <View style={styles.header}>
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={styles.backButton}>
             <Image
-              source={require('../../assets/back.png')}
+              source={back}
               style={styles.backIcon}
               resizeMode="contain"
             />
@@ -95,13 +116,13 @@ const QuestionStatisticsScreen: React.FC<QuestionStatisticsScreenProps> = ({navi
               )}
               <View style={styles.tableHeader}>
                 <Image
-                  source={require('../../assets/questionMark.png')}
+                  source={questionMark}
                   style={styles.rateIcon}
                   resizeMode="contain"
                 />
                 <Text style={[styles.headerCell, {flex: 2}]}>Question</Text>
                 <Image
-                  source={require('../../assets/checkList.png')}
+                  source={checklist}
                   style={styles.correctIcon}
                   resizeMode="contain"
                 />
@@ -130,7 +151,6 @@ const QuestionStatisticsScreen: React.FC<QuestionStatisticsScreenProps> = ({navi
           ))}
         </ScrollView>
       </Body>
-      <Footer items={footerItems} />
     </View>
   );
 };
@@ -231,6 +251,11 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: '#ddd',
     marginVertical: 15,
+  },
+  areaDescription: {
+    fontSize: 14,
+    color: '#333',
+    marginBottom: 10,
   },
 });
 

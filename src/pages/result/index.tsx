@@ -8,8 +8,10 @@ import {
   ImageBackground,
   StyleSheet,
   StatusBar,
+  Image,
 } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
+import { calicoBg, logo } from '../../assets';
 
 interface ResultScreenProps {
   navigation: NavigationProp<any>;
@@ -18,7 +20,7 @@ interface ResultScreenProps {
 const ResultScreen: React.FC<ResultScreenProps> = ({ navigation }) => {
   return (
     <ImageBackground
-      source={require('../../assets/calico_bg.png')}
+      source={calicoBg}
       style={styles.background}
       resizeMode="cover">
       <StatusBar
@@ -28,7 +30,7 @@ const ResultScreen: React.FC<ResultScreenProps> = ({ navigation }) => {
       />
 
       <View style={styles.header}>
-        <Image source={require('../../assets/logo.png')} style={styles.logo} />
+        <Image source={logo} style={styles.logo} />
       </View>
 
       <Text style={styles.title}>Finding Nemo (2003)</Text>

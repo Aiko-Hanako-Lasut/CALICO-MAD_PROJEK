@@ -1,23 +1,24 @@
 import React from 'react';
 import {View, Image, StyleSheet, TouchableOpacity, Text} from 'react-native';
+import { burger, home, logo, profileIcon } from '../../../assets';
 
 const Header = () => {
   return (
     <View style={styles.container}>
       <View style={styles.leftGroup}>
         <TouchableOpacity>
-          <Image source={require('../../../assets')} style={styles.burger} />
+          <Image source={burger} style={styles.burger} />
         </TouchableOpacity>
-        <Image source={require('../../../assets')} style={styles.logo} />
+        <Image source={logo} style={styles.logo} />
       </View>
 
       <View style={styles.sideRight}>
         <TouchableOpacity style={styles.iconButton}>
-          <Image source={require('../../../assets')} style={styles.icon} />
+          <Image source={home} style={styles.icon} />
           <Text style={styles.iconText}>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.iconButton}>
-          <Image source={require('../../../assets')} style={styles.icon} />
+          <Image source={profileIcon} style={styles.icon} />
           <Text style={styles.iconText}>Profile</Text>
         </TouchableOpacity>
       </View>

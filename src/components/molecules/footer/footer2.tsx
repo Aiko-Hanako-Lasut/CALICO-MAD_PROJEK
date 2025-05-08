@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, TouchableOpacity, Text, Image} from 'react-native';
+import { home, profile } from '../../../assets';
 
 interface FooterItem {
   label: string;
   iconSource: any;
   onPress: () => void;
   accessibilityLabel: string;
+  onChangePassword: () => void;
+  onViewProfile: () => void;
 }
 
 interface FooterProps {
@@ -29,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({items}) => {
           activeOpacity={1}
           accessibilityLabel={item.accessibilityLabel}>
           <Image
-            source={item.iconSource}
+            source={profile} // tes
             style={styles.icon}
             accessibilityLabel={`${item.label} Icon`}
           />

@@ -8,10 +8,10 @@ import {
   TextInput,
   ScrollView,
 } from 'react-native';
-import Footer from '../../components/molecules/footer/footer2';
 import Header from '../../components/molecules/header/header2';
 import Body from '../../components/molecules/body/body2';
 import { NavigationProp } from '@react-navigation/native';
+import { editIcon, playerIcon, profileIcon, searchIcon } from '../../assets';
 
 interface HomeProps {
   navigation: NavigationProp<any>;
@@ -57,12 +57,12 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
     setFilteredQuizzes(filtered);
   }, [searchText, quizzes]);
 
-  const handleStartQuiz = quizId => {
+  const handleStartQuiz = (quizId: string) => {
     console.log('Start Quiz:', quizId);
     // Implementasi logika mulai kuis
   };
 
-  const handleCloseQuiz = quizId => {
+  const handleCloseQuiz = (quizId: string) => {
     console.log('Close Quiz:', quizId);
     // Implementasi logika tutup kuis
   };
@@ -82,7 +82,7 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
         {/* Search Bar */}
         <View style={styles.searchBar}>
           <Image
-            source={require('../../asset/searchIcon.png')}
+            source={searchIcon}
             style={styles.searchIcon}
           />
           <TextInput
@@ -149,7 +149,7 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
                   </View>
                   <View style={styles.playersInfo}>
                     <Image
-                      source={require('../../asset/playerIcon.png')}
+                      source={playerIcon}
                       style={styles.playerIcon}
                     />
                     <Text style={styles.playerCount}>
@@ -165,10 +165,26 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
           ))}
         </ScrollView>
       </View>
-      <Footer
-        onViewProfile={handleViewProfilePress}
-        onChangePassword={handleChangePasswordPress}
-      />
+      {/* <Footer
+        items={[
+          { 
+            label: 'Profile', 
+            onPress: handleViewProfilePress, 
+            iconSource: profileIcon, 
+            accessibilityLabel: 'View Profile', 
+            onChangePassword: handleChangePasswordPress, 
+            onViewProfile: handleViewProfilePress 
+          },
+          { 
+            label: 'Change Password', 
+            onPress: handleChangePasswordPress, 
+            iconSource: editIcon, // tes
+            accessibilityLabel: 'Change Password', 
+            onChangePassword: handleChangePasswordPress, 
+            onViewProfile: handleViewProfilePress 
+          },
+        ]}
+      /> */}
     </Body>
   );
 };

@@ -8,10 +8,10 @@ import {
   TextInput,
   ScrollView,
 } from 'react-native';
-import Header from '../../components/molecules/header/header1';
+import Header from '../../components/molecules/header/header2';
 import Body from '../../components/molecules/body/body1';
-import Footer from '../../components/molecules/footer/footer1';
 import { NavigationProp } from '@react-navigation/native';
+import { playerIcon, searchIcon } from '../../assets';
 
 interface ReportProps {
   navigation: NavigationProp<any>;
@@ -52,7 +52,7 @@ const Report: React.FC<ReportProps> = ({ navigation }) => {
     setFilteredQuizzes(filtered);
   }, [searchText, quizzes]);
 
-  const handleViewReport = quizId => {
+  const handleViewReport = (quizId: string) => {
     console.log('View Report:', quizId);
   };
 
@@ -70,7 +70,7 @@ const Report: React.FC<ReportProps> = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.searchBar}>
           <Image
-            source={require('../../assets/searchIcon.png')}
+            source={searchIcon}
             style={styles.searchIcon}
           />
           <TextInput
@@ -95,14 +95,14 @@ const Report: React.FC<ReportProps> = ({ navigation }) => {
                   </View>
                   <TouchableOpacity
                     style={styles.viewReportButton}
-                    onPress={() => handleViewReport(quiz.id)}>
+                    onPress={() => navigation.navigate('viewReport', { quizId: quiz.id })}>
                     <Text style={styles.viewReportButtonText}>VIEW REPORT</Text>
                   </TouchableOpacity>
                 </View>
 
                 <View style={styles.playersInfo}>
                   <Image
-                    source={require('../../assets/playerIcon.png')}
+                    source={playerIcon}
                     style={styles.playerIcon}
                   />
                   <Text style={styles.playerCount}>
@@ -117,10 +117,10 @@ const Report: React.FC<ReportProps> = ({ navigation }) => {
           ))}
         </ScrollView>
       </View>
-      <Footer
+      {/* <Footer
         onViewProfile={handleViewProfilePress}
         onChangePassword={handleChangePasswordPress}
-      />
+      /> */}
     </Body>
   );
 };

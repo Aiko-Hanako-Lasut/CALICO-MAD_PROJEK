@@ -11,11 +11,15 @@ import {
   StatusBar,
 } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
+import { calicoBg, dory, logo } from '../../assets';
 
-const QuizQuestionScreen2 = () => {
+import { useState } from 'react';
+
+const QuizQuestionScreen2: React.FC<{ navigation: NavigationProp<any> }> = ({ navigation }) => {
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
   return (
     <ImageBackground
-      source={require('../../assets/calico_bg.png')}
+      source={calicoBg}
       style={styles.background}
       resizeMode="cover">
       <StatusBar
@@ -27,7 +31,7 @@ const QuizQuestionScreen2 = () => {
       {/* Header */}
       <View style={styles.header}>
         <Image
-          source={require('../../assets/logo.png')}
+          source={logo}
           style={styles.logo}
         />
         <View style={styles.timerContainer}>
@@ -52,31 +56,44 @@ const QuizQuestionScreen2 = () => {
 
       {/* Image */}
       <Image
-        source={require('../../assets/dory.png')}
+        source={dory}
         style={styles.questionImage}
         resizeMode="contain"
       />
 
       {/* Answer Options */}
       <View style={styles.optionsContainer}>
-        <TouchableOpacity style={styles.optionButton}>
+        <TouchableOpacity
+          style={[
+            styles.optionButton,
+            selectedOption === 'A' && styles.optionButtonPressed,
+          ]}
+          onPress={() => setSelectedOption('A')}>
           <Text style={styles.optionLabel}>A</Text>
           <Text style={styles.optionText}>True</Text>
         </TouchableOpacity>
-
-        <TouchableOpacity style={styles.optionButton}>
+        <TouchableOpacity
+          style={[
+            styles.optionButton,
+            selectedOption === 'B' && styles.optionButtonPressed,
+          ]}
+          onPress={() => setSelectedOption('B')}>
           <Text style={styles.optionLabel}>B</Text>
           <Text style={styles.optionText}>False</Text>
         </TouchableOpacity>
+
       </View>
 
       {/* Bottom Buttons */}
       <View style={styles.bottomContainer}>
-        <TouchableOpacity style={styles.bottomButton}>
+        <TouchableOpacity 
+          style={styles.bottomButton} 
+          onPress={() => navigation.goBack()}>
           <Text style={styles.bottomButtonText}>Previous</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.bottomButton}>
+        <TouchableOpacity style={styles.bottomButton}
+          onPress={() => navigation.navigate('review')}>
           <Text style={styles.bottomButtonText}>Finish</Text>
         </TouchableOpacity>
       </View>
@@ -186,6 +203,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderRadius: 4,
     marginRight: 10,
+  },
+  optionButtonPressed: {
+    backgroundColor: '#D3D3D3',
   },
   optionText: {
     fontSize: 16,

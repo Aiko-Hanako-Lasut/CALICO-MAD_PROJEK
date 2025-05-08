@@ -10,6 +10,8 @@ import {
   StatusBar,
 } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
+import { calicoBg, logo } from '../../assets';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 interface ReviewScreenProps {
   navigation: NavigationProp<any>;
@@ -18,7 +20,7 @@ interface ReviewScreenProps {
 const ReviewScreen: React.FC<ReviewScreenProps> = ({ navigation }) => {
   return (
     <ImageBackground
-      source={require('../../assets/calico_bg.png')}
+      source={calicoBg}
       style={styles.background}
       resizeMode="cover">
       <StatusBar
@@ -29,7 +31,7 @@ const ReviewScreen: React.FC<ReviewScreenProps> = ({ navigation }) => {
 
       <View style={styles.header}>
         <Image
-          source={require('../../assets/logo.png')}
+          source={logo}
           style={styles.logo}
         />
       </View>

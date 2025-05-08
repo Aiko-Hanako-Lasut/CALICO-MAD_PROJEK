@@ -24,7 +24,7 @@ interface SignUpChooseAccountProps { // props (parameter) untuk komponen
 }
 
 const SignUpChooseAccount: React.FC<SignUpChooseAccountProps> = ({ navigation }) => { // komponen utama dengan props
-  const onAccountPress = () => navigation.navigate('createQuiz');
+  const onAccountPress = () => navigation.navigate('chooseAccountType');
   const onBackPress = () => navigation.goBack();
 
   return (

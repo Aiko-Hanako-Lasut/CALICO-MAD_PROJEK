@@ -1,7 +1,13 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, TouchableOpacity, Text, Image} from 'react-native';
+import { editIcon, profileIcon } from '../../../assets';
 
-const Footer = ({onViewProfile, onChangePassword}) => {
+interface FooterProps {
+  onViewProfile: () => void;
+  onChangePassword: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({onViewProfile, onChangePassword}) => {
   const [isProfilePressed, setIsProfilePressed] = useState(false);
   const [isPasswordPressed, setIsPasswordPressed] = useState(false);
 
@@ -18,7 +24,7 @@ const Footer = ({onViewProfile, onChangePassword}) => {
         activeOpacity={1}
         accessibilityLabel="View Profile Button">
         <Image
-          source={require('../../../assets')}
+          source={profileIcon}
           style={styles.icon}
           accessibilityLabel="Profile Icon"
         />
@@ -37,7 +43,7 @@ const Footer = ({onViewProfile, onChangePassword}) => {
         activeOpacity={1}
         accessibilityLabel="Change Password Button">
         <Image
-          source={require('../../../assets')}
+          source={editIcon}
           style={styles.icon}
           accessibilityLabel="Edit Icon"
         />

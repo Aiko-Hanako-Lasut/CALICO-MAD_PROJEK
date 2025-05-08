@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Header from '../../components/molecules/header/header2';
 import {NavigationProp} from '@react-navigation/native';
+import { back, calendar, playerIcon, questionMark, reportNotes, statistics, timer } from '../../assets';
 
 interface ReportSummaryScreenProps {
   navigation: NavigationProp<any>;
@@ -43,13 +44,13 @@ const ReportSummaryScreen: React.FC<ReportSummaryScreenProps> = ({
 
   return (
     <View style={styles.container}>
-      <Header navigation={navigation} />
+      <Header/>
       <View style={styles.header}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           style={styles.backButton}>
           <Image
-            source={require('../../assets/backicon.png')}
+            source={back}
             style={styles.backIcon}
             resizeMode="contain"
           />
@@ -61,7 +62,7 @@ const ReportSummaryScreen: React.FC<ReportSummaryScreenProps> = ({
           <Text style={styles.cardTitle}>Quiz Summary</Text>
           <View style={styles.summaryItem}>
             <Image
-              source={require('../../assets/playerIcon.png')}
+              source={playerIcon}
               style={styles.summaryIcon}
               resizeMode="contain"
             />
@@ -70,7 +71,7 @@ const ReportSummaryScreen: React.FC<ReportSummaryScreenProps> = ({
           </View>
           <View style={styles.summaryItem}>
             <Image
-              source={require('../../assets/questionMark.png')}
+              source={questionMark}
               style={styles.summaryIcon}
               resizeMode="contain"
             />
@@ -79,7 +80,7 @@ const ReportSummaryScreen: React.FC<ReportSummaryScreenProps> = ({
           </View>
           <View style={styles.summaryItem}>
             <Image
-              source={require('../../assets/timer.png')}
+              source={timer}
               style={styles.summaryIcon}
               resizeMode="contain"
             />
@@ -88,7 +89,7 @@ const ReportSummaryScreen: React.FC<ReportSummaryScreenProps> = ({
           </View>
           <View style={styles.summaryItem}>
             <Image
-              source={require('../../assets/calendar.png')}
+              source={calendar}
               style={styles.summaryIcon}
               resizeMode="contain"
             />
@@ -121,9 +122,10 @@ const ReportSummaryScreen: React.FC<ReportSummaryScreenProps> = ({
       </ScrollView>
       <View style={styles.bottomNavigation}>
         <TouchableOpacity
-          style={[styles.bottomButton, styles.activeBottomButton]}>
+          style={[styles.bottomButton, styles.activeBottomButton]}
+          onPress={() => navigation.navigate('report')}>
           <Image
-            source={require('../../assets/reportNotes.png')}
+            source={reportNotes}
             style={styles.bottomIcon}
             resizeMode="contain"
           />
@@ -131,9 +133,9 @@ const ReportSummaryScreen: React.FC<ReportSummaryScreenProps> = ({
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.bottomButton}
-          onPress={() => navigation.navigate('QuestionStatistics')}>
+          onPress={() => navigation.navigate('statistics')}>
           <Image
-            source={require('../../assets/statistics.png')}
+            source={statistics}
             style={styles.bottomIcon}
             resizeMode="contain"
           />

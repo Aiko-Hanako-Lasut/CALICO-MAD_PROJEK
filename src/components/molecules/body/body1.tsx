@@ -2,10 +2,11 @@
 
 import React from 'react';
 import {ImageBackground, StyleSheet} from 'react-native';
+import { calicoBg } from '../../../assets';
 
 const Body: React.FC<{children: React.ReactNode}> = ({children}) => (
   <ImageBackground
-    source={require('../../../assets')}
+    source={calicoBg}
     style={styles.background}
     resizeMode="cover">
     {children}

@@ -11,6 +11,7 @@ import {
   StatusBar,
 } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
+import { calicoBg, logo } from '../../assets';
 
 interface QuizDetailsScreenProps {
   navigation: NavigationProp<any>;
@@ -19,7 +20,7 @@ interface QuizDetailsScreenProps {
 const QuizDetailsScreen: React.FC<QuizDetailsScreenProps> = ({ navigation }) => {
   return (
     <ImageBackground
-      source={require('../../assets/calico_bg.png')}
+      source={calicoBg}
       style={styles.background}
       resizeMode="cover">
       <StatusBar
@@ -31,7 +32,7 @@ const QuizDetailsScreen: React.FC<QuizDetailsScreenProps> = ({ navigation }) => 
       <View style={styles.header}>
         <View style={styles.logoWrapper}>
           <Image
-            source={require('../../assets/logo.png')}
+            source={logo}
             style={styles.logoImage}
           />
         </View>

@@ -8,6 +8,7 @@ import {
   NavigationProp,
   ParamListBase,
 } from '@react-navigation/native';
+import { burger, home, logo, profile } from '../../../assets';
 
 export default function CustomHeader() {
   const navigation = useNavigation<NavigationProp<ParamListBase>>();
@@ -20,14 +21,14 @@ export default function CustomHeader() {
     <View style={styles.wrapper}>
       <View style={styles.container}>
         <View style={styles.leftGroup}>
-          <TouchableOpacity onPress={toggleDrawer}>
+          <TouchableOpacity onPress={() => navigation.navigate('menuDrawer')}>
             <Image
-              source={require('../../../assets/burger.png')}
+              source={burger}
               style={styles.burger}
             />
           </TouchableOpacity>
           <Image
-            source={require('../../../assets/logo.png')}
+            source={logo}
             style={styles.logo}
             resizeMode="contain"
           />
@@ -36,18 +37,18 @@ export default function CustomHeader() {
         <View style={styles.sideRight}>
           <TouchableOpacity
             style={styles.iconButton}
-            onPress={() => navigation.navigate('Home')}>
+            onPress={() => navigation.navigate('home')}>
             <Image
-              source={require('../../../assets/home.png')}
+              source={home}
               style={styles.icon}
             />
             <Text style={styles.iconText}>Home</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.iconButton}
-            onPress={() => navigation.navigate('MyProfile')}>
+            onPress={() => navigation.navigate('myProfile')}>
             <Image
-              source={require('../../../assets/profile.png')}
+              source={profile}
               style={styles.icon}
             />
             <Text style={styles.iconText}>Profile</Text>

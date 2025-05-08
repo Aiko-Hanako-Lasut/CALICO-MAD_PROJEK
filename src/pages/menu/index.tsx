@@ -10,6 +10,7 @@ import {
   Image,
 } from 'react-native';
 import {NavigationProp} from '@react-navigation/native';
+import { burger, home, logo, reportNotes } from '../../assets';
 
 interface MenuDrawerProps {
   navigation: NavigationProp<any>;
@@ -28,31 +29,31 @@ interface MenuDrawerProps {
 const MenuDrawer: React.FC<MenuDrawerProps> = ({navigation}) => {
   const menuItems: MenuItem[] = [
     {
-      iconSource: require('../../assets/home.png'),
+      iconSource: home,
       label: 'Home',
       onPress: () => {
-        navigation.navigate('Home');
+        navigation.navigate('home');
       },
     },
     {
-      iconSource: require('../../assets/home.png'),
+      iconSource: home,
       label: 'Create Quiz',
       onPress: () => {
-        navigation.navigate('CreateQuiz');
+        navigation.navigate('createQuiz');
       },
     },
     {
-      iconSource: require('../../assets/reportNotes.png'),
+      iconSource: reportNotes,
       label: 'Report',
       onPress: () => {
-        navigation.navigate('ReportScreen');
+        navigation.navigate('report');
       },
     },
     {
-      iconSource: require('../../assets/home.png'),
+      iconSource: home,
       label: 'About Us',
       onPress: () => {
-        navigation.navigate('About');
+        navigation.navigate('aboutUs');
       },
     },
   ];
@@ -62,7 +63,7 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({navigation}) => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Image
-            source={require('../../assets/logo.png')}
+            source={logo}
             style={styles.logo}
             resizeMode="contain"
           />
@@ -77,7 +78,7 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({navigation}) => {
               onPress={item.onPress}>
               <View style={styles.itemIndicator} />
               <Image
-                source={item.iconSource}
+                source={burger} // tes
                 style={styles.icon}
                 resizeMode="contain"
               />

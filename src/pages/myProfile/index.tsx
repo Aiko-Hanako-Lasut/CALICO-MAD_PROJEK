@@ -5,7 +5,8 @@ import Button from '../../components/atoms/button/button2';
 import Footer from '../../components/molecules/footer/footer2';
 import Header from '../../components/molecules/header/header2';
 import Body from '../../components/molecules/body/body2';
-import { NavigationProp } from '@react-navigation/native';
+import { NavigationContainer, NavigationProp } from '@react-navigation/native';
+import { chat, editIcon, logOut, profileIcon } from '../../assets';
 
 interface ProfileScreenProps {
   navigation: NavigationProp<any>;
@@ -31,7 +32,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
   };
 
   const handleChangePasswordPress = () => {
-    console.log('Change Password pressed (from footer)');
+    navigation.navigate('changePassword');
   };
 
   return (
@@ -56,31 +57,36 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
           editable={false}
         />
 
-        <TouchableOpacity
-          style={styles.contactAdminButton}
-          onPress={handleContactAdmin}>
-          <Image
-            source={require('../../assets/chat.png')}
-            style={styles.contactAdminIcon}
+        <View style={styles.logoutButton}>
+          <Button
+            title="LOG OUT"
+            backgroundColor="#DB4437"
+            textColor="white"
+            onPress={() => navigation.navigate('logIn')}
+            iconSource={logOut}
+            iconStyle={styles.logoutIcon}
           />
-          <Text style={styles.contactAdminText}>
-            Contact SIU admin to update
-          </Text>
-        </TouchableOpacity>
-
-        <Button
-          title="LOG OUT"
-          backgroundColor="#DB4437"
-          textColor="white"
-          onPress={handleLogout}
-          iconSource={require('../../assets/logOut.png')}
-          iconStyle={styles.logoutIcon}
-          style={styles.logoutButton}
-        />
+        </View>
       </View>
       <Footer
-        onViewProfile={handleViewProfilePress}
-        onChangePassword={handleChangePasswordPress}
+        items={[
+          { 
+            label: 'Profile', 
+            onPress: handleViewProfilePress, 
+            iconSource: profileIcon, 
+            accessibilityLabel: 'View Profile', 
+            onChangePassword: handleChangePasswordPress, 
+            onViewProfile: handleViewProfilePress 
+          },
+          { 
+            label: 'Change Password', 
+            onPress: handleChangePasswordPress, 
+            iconSource: editIcon, 
+            accessibilityLabel: 'Change Password', 
+            onChangePassword: handleChangePasswordPress, 
+            onViewProfile: handleViewProfilePress 
+          },
+        ]}
       />
     </Body>
   );
@@ -118,8 +124,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logoutButton: {
-    width: 20,
-    height: 35,
+    width: 620,
+    height: 70,
     borderRadius: 5,
     alignItems: 'center',
     flexDirection: 'row',

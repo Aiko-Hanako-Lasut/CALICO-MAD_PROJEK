@@ -1,7 +1,17 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, Text, Image} from 'react-native';
 
-const Button = ({
+interface ButtonProps {
+  title: string;
+  onPress: () => void;
+  backgroundColor?: string;
+  textColor?: string;
+  iconSource?: any;
+  iconStyle?: object;
+  iconPosition?: 'left' | 'right';
+}
+
+const Button: React.FC<ButtonProps> = ({
   title,
   onPress,
   backgroundColor = 'blue',

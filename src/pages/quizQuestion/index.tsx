@@ -11,6 +11,7 @@ import {
   StatusBar,
 } from 'react-native';
 import { NavigationProp } from '@react-navigation/native';
+import { calicoBg, logo, nemo } from '../../assets';
 
 interface QuizQuestionScreenProps {
   navigation: NavigationProp<any>;
@@ -19,7 +20,7 @@ interface QuizQuestionScreenProps {
 const QuizQuestionScreen: React.FC<QuizQuestionScreenProps> = ({ navigation }) => {
   return (
     <ImageBackground
-      source={require('../../assets/calico_bg.png')}
+      source={calicoBg}
       style={styles.background}
       resizeMode="cover">
       <StatusBar
@@ -32,7 +33,7 @@ const QuizQuestionScreen: React.FC<QuizQuestionScreenProps> = ({ navigation }) =
         <View style={styles.logoContainer}>
           <Text style={styles.logoText}>CALICO</Text>
           <Image
-            source={require('../../assets/logo.png')}
+            source={logo}
             style={styles.logoImage}
           />
         </View>
@@ -55,7 +56,7 @@ const QuizQuestionScreen: React.FC<QuizQuestionScreenProps> = ({ navigation }) =
       </View>
 
       <Image
-        source={require('./assets/Nemo.jpg')}
+        source={nemo}
         style={styles.questionImage}
         resizeMode="contain"
       />

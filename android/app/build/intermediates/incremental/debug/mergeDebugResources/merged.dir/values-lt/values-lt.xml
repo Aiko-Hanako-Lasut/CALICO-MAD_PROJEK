@@ -42,8 +42,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Gaunamasis skambutis"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Vykstantis skambutis"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Gaunamojo skambučio tikrinimas"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">Reagavimo savasis kūrėjo meniu „(%1$s)“</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">Rodoma „%1$s“</string>
     <string name="character_counter_content_description">Įvesta simbolių: %1$d iš %2$d</string>
     <string name="character_counter_overflowed_content_description">Viršytas simbolių skaičius: %1$d iš %2$d</string>
     <string name="clear_text_end_icon_content_description">Išvalyti tekstą</string>

@@ -12,12 +12,39 @@ import Header from '../../components/molecules/header/header2';
 import Body from '../../components/molecules/body/body2';
 import { NavigationProp } from '@react-navigation/native';
 import { editIcon, playerIcon, profileIcon, searchIcon } from '../../assets';
+// import { getDatabase, ref, onValue } from "firebase/database";
 
 interface HomeProps {
   navigation: NavigationProp<any>;
+  route: {
+    param: {
+      uid: string;
+    };
+  };
 }
 
-const Home: React.FC<HomeProps> = ({ navigation }) => {
+const Home: React.FC<HomeProps> = ({ navigation, route }) => {
+  // // Firebase authentication (copy dari docx)
+  // const uid = route?.param?.uid || '';
+  // const [user, setUser] = useState({});
+  // const [name, setName] = useState('');
+  // const [email, SetEmail] = useState('');
+  // const [faculty, setFaculty] = useState('');
+  // const db = getDatabase();
+
+  // useEffect(() => {
+  //   const userRef = ref(db, 'users/' + uid);
+  //   onValue(userRef, (snapshot) => {
+  //     if (snapshot.exists()) {
+  //       const data = snapshot.val();
+  //       setUser(data)
+  //       setName(data.name);
+  //       SetEmail(data.email);
+  //       setFaculty(data.faculty);
+  //     }
+  //     });
+  //   }, []);
+
   const [quizzes, setQuizzes] = useState([
     {
       id: '1',
@@ -59,20 +86,18 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
 
   const handleStartQuiz = (quizId: string) => {
     console.log('Start Quiz:', quizId);
-    // Implementasi logika mulai kuis
   };
 
   const handleCloseQuiz = (quizId: string) => {
     console.log('Close Quiz:', quizId);
-    // Implementasi logika tutup kuis
   };
 
   const handleViewProfilePress = () => {
-    console.log('View Profile pressed (from footer)');
+    navigation.navigate('profile');
   };
 
   const handleChangePasswordPress = () => {
-    console.log('Change Password pressed (from footer)');
+    navigation.navigate('changePassword');
   };
 
   return (

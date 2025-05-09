@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"इनकमिंग कॉल"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"सुरू असलेला कॉल"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"इनकमिंग कॉल स्क्रीन करत आहे"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">मुळ डीईव्ही मेनू प्रतिक्रिया द्या (%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">प्रसारित होत आहे %1$s</string>
     <string name="character_counter_content_description">%2$d पैकी %1$d वर्ण एंटर केले आहे</string>
     <string name="character_counter_overflowed_content_description">%2$d पैकी %1$d वर्णमर्यादा ओलांडली आहे</string>
     <string name="clear_text_end_icon_content_description">मजकूर साफ करा</string>

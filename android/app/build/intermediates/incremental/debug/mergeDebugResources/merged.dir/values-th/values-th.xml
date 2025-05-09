@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"สายเรียกเข้า"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"สายที่สนทนาอยู่"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"กำลังสกรีนสายเรียกเข้า"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">แสดงความรู้สึกต่อเมนูผู้พัฒนาแบบเนทีฟ (%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">กำลังเผยแพร่ %1$s</string>
     <string name="character_counter_content_description">ป้อนอักขระแล้ว %1$d จาก %2$d ตัว</string>
     <string name="character_counter_overflowed_content_description">เกินจำนวนอักขระสูงสุด %1$d จาก %2$d</string>
     <string name="clear_text_end_icon_content_description">ล้างข้อความ</string>

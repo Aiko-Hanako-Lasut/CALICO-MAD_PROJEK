@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"အဝင်ခေါ်ဆိုမှု"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"လက်ရှိခေါ်ဆိုမှု"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"အဝင်ခေါ်ဆိုမှုကို စစ်ဆေးနေသည်"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">Native Dev မီနူး (%1$s) ကို တုံ့ပြန်ရန်</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">%1$s ကို ပြသနေပါတယ်</string>
     <string name="character_counter_content_description">စာလုံးရေ %2$d တွင် %1$d ထည့်သွင်းထားသည်</string>
     <string name="character_counter_overflowed_content_description">စာလုံးရေအကန့်အသတ် %2$d လုံးတွင် %1$d လုံးကျော်နေသည်</string>
     <string name="clear_text_end_icon_content_description">စာသား ဖယ်ရှားရန်</string>

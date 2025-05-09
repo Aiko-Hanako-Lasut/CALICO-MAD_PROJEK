@@ -5,16 +5,13 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDp67iXT_6kw1mVylwb3pmhXXsEVt6yeaI",
-  authDomain: "calico3-caf42.firebaseapp.com",
-  projectId: "calico3-caf42",
-  storageBucket: "calico3-caf42.firebasestorage.app",
-  messagingSenderId: "56210962266",
-  appId: "1:56210962266:web:cf8085faae3f7440d1e563",
-  databaseURL: "https://calico3-caf42-default-rtdb.firebaseio.com/",
+  apiKey: "AIzaSyBuMWN4wRviX8ayTPEDmWDxJwJBerI4ZHM",
+  authDomain: "calico-296e6.firebaseapp.com",
+  projectId: "calico-296e6",
+  storageBucket: "calico-296e6.firebasestorage.app",
+  messagingSenderId: "483838690309",
+  appId: "1:483838690309:web:80595db5610acc4e74886c"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-export default app;

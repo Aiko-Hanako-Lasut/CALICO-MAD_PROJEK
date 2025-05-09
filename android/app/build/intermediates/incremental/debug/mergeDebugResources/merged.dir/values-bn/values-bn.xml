@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"ইনকামিং কল"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"চালু থাকা কল"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"ইনকামিং কল স্ক্রিনিং করা হচ্ছে"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">রিয়েকশন নেটিভ ডেভেলপার মেনু (%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">%1$s চলছে</string>
     <string name="character_counter_content_description">%2$dটির মধ্যে %1$dটি অক্ষর লেখা হয়েছে</string>
     <string name="character_counter_overflowed_content_description">অক্ষরের সীমা %1$d এর %2$d অতিক্রম করেছে</string>
     <string name="clear_text_end_icon_content_description">টেক্সট মুছুন</string>

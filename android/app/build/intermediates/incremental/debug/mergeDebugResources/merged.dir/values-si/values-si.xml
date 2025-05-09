@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"එන ඇමතුම"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"කරගෙන යන ඇමතුම"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"එන ඇමතුමක් පරීක්ෂා කරන්න"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">(%1$s) React Native Dev මෙනුව</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">%1$s ප්‍රචාරය කරමින් පවතී</string>
     <string name="character_counter_content_description">අනුලකුණු %2$dන් %1$dක් ඇතුළු කෙරිණි</string>
     <string name="character_counter_overflowed_content_description">අනුලකුණු සීමාව %2$dකින් %1$d ඉක්ම විය</string>
     <string name="clear_text_end_icon_content_description">පෙළ හිස් කරන්න</string>

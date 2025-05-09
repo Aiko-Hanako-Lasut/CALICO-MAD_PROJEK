@@ -40,7 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Simu uliyopigiwa"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Simu inayoendelea"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Inachuja simu unayopigiwa"</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">Linaendeshwa %1$s</string>
     <string name="character_counter_content_description">Umeweka herufi %1$d kati ya %2$d</string>
     <string name="character_counter_overflowed_content_description">Umepitisha idadi ya juu ya herufi %1$d kati ya %2$d</string>
     <string name="clear_text_end_icon_content_description">Futa maandishi</string>

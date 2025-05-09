@@ -42,8 +42,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"שיחה נכנסת"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"שיחה פעילה"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"סינון שיחה נכנסת"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">תפריט מקומי למפתחים (%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">%1$s בפעילות</string>
     <string name="character_counter_content_description">הוזנו %1$d תווים מתוך %2$d</string>
     <string name="character_counter_overflowed_content_description">מגבלת התווים חורגת ב-%1$d מתוך %2$d</string>
     <string name="clear_text_end_icon_content_description">מחיקת הטקסט</string>

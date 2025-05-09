@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"உள்வரும் அழைப்பு"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"செயலில் இருக்கும் அழைப்பு"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"உள்வரும் அழைப்பை மதிப்பாய்வு செய்கிறது"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">ரியாக்ட் நேட்டிவ் டேவ் மெனு (%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">இயங்குகிறது %1$s</string>
     <string name="character_counter_content_description">%2$d இல் %1$d எழுத்துகள் உள்ளிடப்பட்டுள்ளன</string>
     <string name="character_counter_overflowed_content_description">%2$d இல் %1$d எழுத்து வரம்பு மீறப்பட்டது</string>
     <string name="clear_text_end_icon_content_description">உரையை அழிக்கும்</string>

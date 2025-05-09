@@ -19,8 +19,8 @@ import Button from '../../components/atoms/button';
 import SignUpTextButton from './signUpTextButton';
 import TextInputLogin from './textInputLogin';
 import COLORS from '../../constants';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { set } from 'firebase/database';
+// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+// import { set } from 'firebase/database';
 
 interface LogInProps { // props (parameter) untuk komponen
   navigation: NavigationProp<any>;
@@ -45,17 +45,17 @@ const LogIn: React.FC<LogInProps> = ({ navigation }) => { // komponen utama deng
   };
 
   const onLoginPress = () => {
-    const auth = getAuth();
-      signInWithEmailAndPassword(auth, usernameOrEmail, password)
-        .then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          navigation.navigate('createQuiz', {uid: user.uid});
-        })
-        .catch((error) => {
-          setUsernameOrEmailErrMsg;
-          setPasswordErrMsg;
-        });
+    // const auth = getAuth();
+    //   signInWithEmailAndPassword(auth, usernameOrEmail, password)
+    //     .then((userCredential) => {
+    //       // Signed in 
+    //       const user = userCredential.user;
+    //       navigation.navigate('createQuiz', {uid: user.uid});
+    //     })
+    //     .catch((error) => {
+    //       setUsernameOrEmailErrMsg;
+    //       setPasswordErrMsg;
+    //     });
 
     let valid = true;
     if (!usernameOrEmail) {

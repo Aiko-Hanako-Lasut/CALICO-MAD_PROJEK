@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"ઇનકમિંગ કૉલ"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"ચાલુ કૉલ"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"ઇનકમિંગ કૉલનું સ્ક્રીનિંગ થાય છે"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">મૂળ ડેવ મેનૂ (%1$s) પર પ્રતિક્રિયા આપો</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">%1$s ચાલુ છે</string>
     <string name="character_counter_content_description">%2$dમાંથી %1$d અક્ષરો દાખલ કર્યા</string>
     <string name="character_counter_overflowed_content_description">%2$dમાંથી %1$dની વર્ણ મર્યાદા ઓળંગાઈ ગઈ છે</string>
     <string name="clear_text_end_icon_content_description">ટેક્સ્ટ સાફ કરો</string>

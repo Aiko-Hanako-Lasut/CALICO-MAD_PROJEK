@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"ਇਨਕਮਿੰਗ ਕਾਲ"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"ਜਾਰੀ ਕਾਲ"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"ਇਨਕਮਿੰਗ ਕਾਲ ਦੀ ਸਕ੍ਰੀਨਿੰਗ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">ਨੇਟਿਵ ਡਿਵੈ ਮੀਨੂ (%1$s) \'ਤੇ ਪ੍ਰਤੀਕਿਰਿਆ ਦਿਓ</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">%1$s ਚੱਲ ਰਿਹਾ ਹੈ</string>
     <string name="character_counter_content_description">%2$d ਵਿੱਚੋਂ %1$d ਅੱਖਰ-ਚਿੰਨ੍ਹ ਦਾਖਲ ਕੀਤੇ ਗਏ</string>
     <string name="character_counter_overflowed_content_description">ਅੱਖਰ-ਚਿੰਨ੍ਹ ਸੀਮਾ %2$d ਤੋਂ %1$d ਵਧੀ</string>
     <string name="clear_text_end_icon_content_description">ਲਿਖਤ ਕਲੀਅਰ ਕਰੋ</string>

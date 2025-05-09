@@ -40,7 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Входящо обаждане"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Текущо обаждане"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Преглежда се входящо обаждане"</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">Управление на %1$s</string>
     <string name="character_counter_content_description">Въведени знаци: %1$d от %2$d</string>
     <string name="character_counter_overflowed_content_description">Максималният брой знаци е надхвърлен с(ъс) %1$d от %2$d</string>
     <string name="clear_text_end_icon_content_description">Изчистване на текста</string>

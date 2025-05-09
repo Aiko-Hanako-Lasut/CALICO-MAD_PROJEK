@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Panggilan masuk"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Panggilan sedang berlangsung"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Menyaring panggilan masuk"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">Menu Pembangun Asli Bereaksi (%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">Sedang berjalan %1$s</string>
     <string name="character_counter_content_description">Aksara dimasukkan %1$d daripada %2$d</string>
     <string name="character_counter_overflowed_content_description">Melebihi had aksara %1$d daripada %2$d</string>
     <string name="clear_text_end_icon_content_description">Kosongkan teks</string>

@@ -19,7 +19,6 @@ import HeaderCreateQuiz from '../../components/molecules/header/headerCreateQuiz
 import TextInput from '../../components/molecules/textInput';
 import Text from '../../components/molecules/text';
 import CONSTANTS from '../../constants';
-
 import AnswerItem from './answerItem';
 import AnswerItemScreen from './answerItemScreen';
 import QuestionSideScreen from './questionSideScreen';
@@ -142,10 +141,26 @@ const CreateQuiz: React.FC<CreateQuizProps> = ({ navigation }) => {
             style={styles.questionInput}
           />
 
-          <TouchableOpacity style={styles.uploadBox}>
-            <Image source={picture} style={styles.uploadIcon} />
+            <TouchableOpacity
+            style={styles.uploadBox}
+            onPress={async () => {
+              const { launchImageLibrary } = await import('react-native-image-picker');
+              const result = await launchImageLibrary({ mediaType: 'photo' });
+              if (result.assets && result.assets[0]?.uri) {
+              updateQuestion({ imageUri: result.assets[0].uri });
+              }
+            }}
+            >
+            <Image
+              source={
+              questions[activeIndex].imageUri
+                ? { uri: questions[activeIndex].imageUri }
+                : picture
+              }
+              style={styles.uploadIcon}
+            />
             <Text label="Upload file" />
-          </TouchableOpacity>
+            </TouchableOpacity>
 
           <View style={styles.optionRow}>
               <AnswerItem

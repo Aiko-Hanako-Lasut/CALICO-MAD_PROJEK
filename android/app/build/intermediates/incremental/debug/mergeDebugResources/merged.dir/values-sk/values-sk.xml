@@ -42,8 +42,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Prichádzajúci hovor"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Prebiehajúci hovor"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Preveruje sa prichádzajúci hovor"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">Natívna vývojárska ponuka reakcie (%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">Spustené: %1$s</string>
     <string name="character_counter_content_description">Zadané znaky: %1$d z %2$d</string>
     <string name="character_counter_overflowed_content_description">Bol prekročený povolený počet znakov (%1$d z %2$d)</string>
     <string name="clear_text_end_icon_content_description">Vymazať text</string>

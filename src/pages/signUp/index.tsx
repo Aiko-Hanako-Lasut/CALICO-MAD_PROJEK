@@ -20,8 +20,8 @@ import Button from '../../components/atoms/button';
 import LogInTextButton from './logInTextButton';
 import TextInputSignup from './textInputSignUp';
 import COLORS from '../../constants';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
+// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+// import { getDatabase, ref, set } from "firebase/database";
 
 const MAX_TEXT_INPUT_LENGTH = 50;
 
@@ -69,22 +69,22 @@ const SignUp: React.FC<SignUpProps> = ({ navigation }) => { // komponen utama de
   };
 
   // Firebase authentication (copy dari docx)
-  const auth = getAuth();
-  const db = getDatabase();
-  createUserWithEmailAndPassword(auth, usernameOrEmail, password)
-    .then((userCredential) => {
-      // Signed up 
-      const user = userCredential.user;
-      // Simpan ke dalam realtime database
-      set(ref(db, 'users/' + user.uid), usernameOrEmail);
-      setUsernameOrEmailValid;
-      setPasswordValid;
-      navigation.navigate ('chooseAccountType');
-    })
-    .catch((error) => {
-      setUsernameOrEmailErr;
-      setPasswordErr;
-    });
+  // const auth = getAuth();
+  // const db = getDatabase();
+  // createUserWithEmailAndPassword(auth, usernameOrEmail, password)
+  //   .then((userCredential) => {
+  //     // Signed up 
+  //     const user = userCredential.user;
+  //     // Simpan ke dalam realtime database
+  //     set(ref(db, 'users/' + user.uid), usernameOrEmail);
+  //     setUsernameOrEmailValid;
+  //     setPasswordValid;
+  //     navigation.navigate ('chooseAccountType');
+  //   })
+  //   .catch((error) => {
+  //     setUsernameOrEmailErr;
+  //     setPasswordErr;
+  //   });
 
   return (
     <View style={styles.container}>

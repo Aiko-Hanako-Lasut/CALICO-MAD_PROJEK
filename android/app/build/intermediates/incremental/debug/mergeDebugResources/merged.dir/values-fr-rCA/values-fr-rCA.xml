@@ -40,7 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"Appel entrant"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"Appel en cours"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"Filtrer un appel entrant"</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">%1$s en cours</string>
     <string name="character_counter_content_description">Caractères entrés : %1$d sur %2$d</string>
     <string name="character_counter_overflowed_content_description">Limite de caractère dépassée : %1$d sur %2$d</string>
     <string name="clear_text_end_icon_content_description">Effacer le texte</string>

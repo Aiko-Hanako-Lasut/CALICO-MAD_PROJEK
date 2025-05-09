@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"ការ​ហៅ​ចូល"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"ការ​ហៅដែលកំពុងដំណើរការ"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"កំពុងពិនិត្យការ​ហៅ​ចូល"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">ប្រតិកម្ម​ម៉ឺនុយ​​អភិវឌ្ឍដើម (%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">ដំណើរការ %1$s</string>
     <string name="character_counter_content_description">តួ​អក្សរ​បាន​បញ្ចូល​ %1$d នៃ %2$d</string>
     <string name="character_counter_overflowed_content_description">ដែនកំណត់តួអក្សរបានលើស %1$d នៃ %2$d</string>
     <string name="clear_text_end_icon_content_description">សម្អាតអក្សរ</string>

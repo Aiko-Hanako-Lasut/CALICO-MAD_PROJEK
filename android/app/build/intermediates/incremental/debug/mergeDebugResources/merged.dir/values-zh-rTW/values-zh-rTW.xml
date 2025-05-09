@@ -40,8 +40,6 @@
     <string msgid="6107532579223922871" name="call_notification_incoming_text">"來電"</string>
     <string msgid="8623827134497363134" name="call_notification_ongoing_text">"通話中"</string>
     <string msgid="59049573811482460" name="call_notification_screening_text">"正在過濾來電"</string>
-    <string gender="unknown" name="catalyst_dev_menu_header">React Native 開發人員功能表(%1$s)</string>
-    <string gender="unknown" name="catalyst_dev_menu_sub_header">正在執行%1$s</string>
     <string name="character_counter_content_description">已輸入 %1$d 個字元 (上限為 %2$d 個字元)</string>
     <string name="character_counter_overflowed_content_description">超過字元限制 (共 %1$d 字元，上限 %2$d 字元)</string>
     <string name="clear_text_end_icon_content_description">清除文字</string>
